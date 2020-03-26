@@ -14,7 +14,7 @@
 	http_response_code(200);
 	}
 
-	$urlAPI="http://192.168.250.107/api/";
+	$urlAPI="http://58.181.144.100:9081/api/";
 	function getFormatTextMessage($text)
 	{
 		//$datas = [];
