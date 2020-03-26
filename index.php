@@ -11,10 +11,10 @@
 	$messages = [];
 	$messages['replyToken'] = $replyToken;
 	$messageInput = $deCode['events'][0]["message"]["text"];
-	if($messageInput=="Work At Home เมื่อไร"){
-		$messages['messages'][0] = getFormatTextMessage("มีแต่ Work At Bui!!! By CEO");
+	if($messageInput=="Work At Home ตอนไหน"){
+		$messages['messages'][0] = getFormatTextMessage("มีแต่ Work At Bui!!! By CEO @ ".$messageInput);
 	}else{
-		$messages['messages'][0] = getFormatTextMessage("ถามไรตอบได้");
+		$messages['messages'][0] = getFormatTextMessage("ถามไรตอบได้ @ ".$messageInput);
 	}
 
 	
