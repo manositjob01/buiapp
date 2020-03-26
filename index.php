@@ -5,12 +5,12 @@
 	$deCode = json_decode($datas,true);
 
 	file_put_contents('log.txt', file_get_contents('php://input') . PHP_EOL, FILE_APPEND);
-
+	$messageText = $deCode["events"][0]["message"];
 	$replyToken = $deCode['events'][0]['replyToken'];
 
 	$messages = [];
 	$messages['replyToken'] = $replyToken;
-	if($messages['messages'][0]=="Work At Home เมื่อไร"){
+	if($messageText=="Work At Home เมื่อไร"){
 		$messages['messages'][0]=getFormatTextMessage("ไม่มี มีแต่ At BUI");
 	}else{
 	$messages['messages'][0] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
