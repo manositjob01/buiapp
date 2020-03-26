@@ -11,7 +11,7 @@
 	$messages = [];
 	$messages['replyToken'] = $replyToken;
 	if($messages['messages'][0]=="Work At Home เมื่อไร"){
-		$messages['messages'][0]="ไม่มี มีแต่ At BUI";
+		$messages['messages'][0]=getFormatTextMessage("ไม่มี มีแต่ At BUI");
 	}else{
 	$messages['messages'][0] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
 	}
