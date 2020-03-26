@@ -10,8 +10,13 @@
 
 	$messages = [];
 	$messages['replyToken'] = $replyToken;
-	
-	$messages['messages'][0] = getFormatTextMessage("hello... ".$deCode['events'][0]["message"]["text"]." เอ้ย ถามอะไรก็ตอบได้".json_encode($deCode));
+	$messageInput = $deCode['events'][0]["message"]["text"];
+	if($messageInput=="Work At Home เมื่อไร"){
+		$messages['messages'][0] = getFormatTextMessage("มีแต่ Work At Bui!!! By CEO");
+	}else{
+		$messages['messages'][0] = getFormatTextMessage("ถามไรตอบได้");
+	}
+
 	
 	$encodeJson = json_encode($messages);
 
