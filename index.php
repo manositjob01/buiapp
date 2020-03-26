@@ -15,7 +15,7 @@
 		$messages['messages'][0] = getFormatTextMessage("มีแต่ Work At Bui!!! By CEO @ ".$messageInput);
 	}else if($messageInput=="ครางชื่อพี่วิทูลหน่อยครับ"){
 		$messages['messages'][0] = getFormatTextMessage("โอ๊ยๆๆๆ อ๊าๆๆๆ ทูลลลคร้าาาา @ ".$messageInput);
-	}
+
 	
 	}else{
 		$messages['messages'][0] = getFormatTextMessage("ถามไรตอบได้ @ ".$messageInput);
