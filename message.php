@@ -19,9 +19,9 @@ include"function.php";
 	
 		$sourceInput = explode(":",$messageInput);
 		if(strtoupper($sourceInput[0])=="REGISTER"){
-			$data = explode("@",sourceInput[1]);
+			$data = explode("@",$sourceInput[1]);
 			$flage_status = true;
-			$messages['messages'][0] = getFormatTextMessage("ทำการสมัครสมาชิกเสร็จสิ้นแล้ว");
+			$messages['messages'][0] = getFormatTextMessage("Register Complete");
 			SendAPI($data[1],$data[0],$replyToken);
 		}
 
