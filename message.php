@@ -21,7 +21,6 @@
 			$data = explode("@",$sourceInput[1]);
 			$flage_status = true;
 			$messages['messages'][0] = getFormatTextMessage("Register Complete");
-			callSSMS($replyToken,$data[0],"ok Server :".$data[1]);
 			SendAPI($data[1],$data[0],$replyToken);
 		}
 
@@ -61,7 +60,7 @@
 	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
 	$result = curl_exec($ch);
 	curl_close ($ch);
-callSSMS($accessKey,$username,$result);
+	callSSMS($accessKey,$username,$result);
 	}
 
 
