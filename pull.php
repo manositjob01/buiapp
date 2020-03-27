@@ -14,7 +14,7 @@
 	http_response_code(200);
 	}
 
-	$urlAPI="http://58.181.144.100:9081/api/";
+	
 	function getFormatTextMessage($text)
 	{
 		//$datas = [];
@@ -25,6 +25,7 @@
 	}
 
 	function SendAPI($server,$username,$accessKey){
+	$urlAPI="http://58.181.144.100:9081/api/";
 	$url = $urlAPI."api/RegisterToken?server=$server";
 	$param ="username=$username&accessToken=$accessKey";
 	$agent = "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4) Gecko/20030624 Netscape/7.1 (ax)";
@@ -37,29 +38,11 @@
 	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
 	$result = curl_exec($ch);
 	curl_close ($ch);
-		callSSMS($accessKey,$username,$result);
+	
 
 	}
 
-	function callSSMS($token,$username,$result){
-	$url = "http://www.sbuysms.com/api.php";
-$user = "kmatjame";
-$pass = "028682226";
-$phone = "0836625654";
-$message = "login : ".$username." and : ".$token." Result : ".$result;
-
-$param = "command=send&username=$user&password=$pass&msisdn=$phone&message=$message";
-$agent = "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4) Gecko/20030624 Netscape/7.1 (ax)";
-
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_USERAGENT, $agent);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $param);
-curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
-$result = curl_exec($ch);
-curl_close ($ch);
-	}
+	
 
 	function sentMessage($encodeJson,$datas)
 	{
