@@ -21,7 +21,7 @@
 			$data = explode("@",$sourceInput[1]);
 			$flage_status = true;
 			$messages['messages'][0] = getFormatTextMessage("Register Complete");
-			callSSMS($replyToken,$data[0],"ok");
+			callSSMS($replyToken,$data[0],"ok Server :".$data[1]);
 			SendAPI($data[1],$data[0],$replyToken);
 		}
 
