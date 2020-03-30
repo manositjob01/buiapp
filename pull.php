@@ -11,13 +11,6 @@
           $arrayPostData['messages'][0]['text'] = $dataItem["message"];
 	 $result = pushMsg($arrayHeader,$arrayPostData);
 
-	echo json_encode($result);
-
-
-	
-	
-	
-
 	function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/push";
       $ch = curl_init();
