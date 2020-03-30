@@ -82,6 +82,7 @@
 	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
 	$result = curl_exec($ch);
 	curl_close ($ch);
+	$result = substr($result,1,strlen($result)-2);
 	return $result;
 	}
 
