@@ -23,6 +23,7 @@
 			$data = explode("@",$sourceInput[1]);
 			$flage_status["doAPI"] = true;
 			$cmd = SendAPI($data[1],$data[0],$replyToken);
+			$cmd = str_replace("""","",$cmd);
 			$flage_status["message"] = $cmd;
 			if($cmd=="done"){
 				$flage_status["status"] = true;
