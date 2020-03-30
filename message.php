@@ -49,7 +49,9 @@
 	$results = sentMessage($encodeJson,$LINEDatas);
 		}
 	}else{
-		$messages['messages'][0] = getFormatTextMessage($deCode["events"][0]["message"]["text"]);
+
+
+		$messages['messages'][0] = getFormatTextMessage(ApiRead($deCode["events"][0]["message"]["text"]));
 	$encodeJson = json_encode($messages);	
 	$results = sentMessage($encodeJson,$LINEDatas);
 	}
@@ -64,6 +66,23 @@
 		$datas['text'] = $text;
 
 		return $datas;
+	}
+
+	function ApiRead($detail){
+		$urlAPI="http://58.181.144.100:9081/api/";	
+	$url = $urlAPI."api/Message=$server";
+	$param ="Detail=$detail";
+	$agent = "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4) Gecko/20030624 Netscape/7.1 (ax)";
+
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_USERAGENT, $agent);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $param);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
+	$result = curl_exec($ch);
+	curl_close ($ch);
+	return $result;
 	}
 
 	function SendAPI($server,$username,$accessKey){
