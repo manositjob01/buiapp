@@ -2,7 +2,7 @@
 	
 	$messages = [];
 	$messages['replyToken'] ="57aaf9f77b4a408f84d30d52d72da15f";
-	$messages['messages'][0] = "aaaa";"
+	$messages['messages'][0] = "aaaa";
 	$encodeJson = json_encode($messages);
 
 	$LINEDatas['url'] = "https://api.line.me/v2/bot/message/reply";
