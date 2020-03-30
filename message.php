@@ -70,6 +70,7 @@
 	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
 	$result = curl_exec($ch);
 	curl_close ($ch);
+	return $result;
 	}
 
 	function sentMessage($encodeJson,$datas)
