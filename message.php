@@ -12,26 +12,36 @@
 	$messages['replyToken'] = $replyToken;
 	$messageInput = $deCode['events'][0]["message"]["text"];
 	$pos = strpos($messageInput,":");
-	$flage_status = false;
+	$flage_status["doAPI"] = false;	
+	$flage_status["status"] = false;
 	if($pos!=false){
 
 	
 		$sourceInput = explode(":",$messageInput);
 		if(strtoupper($sourceInput[0])=="REGISTER"){
 			$data = explode("@",$sourceInput[1]);
-			$flage_status = true;
-			$messages['messages'][0] = getFormatTextMessage("Register Complete");
-			SendAPI($data[1],$data[0],$replyToken);
+			$flage_status["doAPI"] = true;
+		
+			if(SendAPI($data[1],$data[0],$replyToken)=="done"){
+				$flage_status["status"] = true;
+			}
 		}
 
 	}
 	
+	$messages['messages'][0] = getFormatTextMessage("Register Complete");
 	$encodeJson = json_encode($messages);
 
 	$LINEDatas['url'] = "https://api.line.me/v2/bot/message/reply";
   	$LINEDatas['token'] = "oPv+uZJTdZLoNa+edPtGTj0bjhaoA3/6KaHl3BZ4THohXrD8MMtnDLgVzb5SCopNp8PbNF9RlIAn664eMDnwvhafX3pwFjeks35MMRxw/9NErEY1UOyQ/Qhj1pRMV5GFbQq/3XtRfNk9T0oF2H3hPAdB04t89/1O/w1cDnyilFU=";
-	if($flage_status){
+	if($flage_status["doAPI"]){
+		if($flage_status["status"]){
   	$results = sentMessage($encodeJson,$LINEDatas);
+		}else{
+		$messages['messages'][0] = getFormatTextMessage("User ID Not Invalite");
+	$encodeJson = json_encode($messages);	
+	$results = sentMessage($encodeJson,$LINEDatas);
+		}
 	}
 	/*Return HTTP Request 200*/
 	http_response_code(200);
