@@ -6,7 +6,7 @@
 
 	file_put_contents('log.txt', file_get_contents('php://input') . PHP_EOL, FILE_APPEND);
 	$messageText = $deCode["events"][0]["message"];
-	$replyToken = $deCode['events'][0]['replyToken'];
+	$replyToken = $deCode['events'][0['source']['userId'];
 
 	$messages = [];
 	$messages['replyToken'] = $replyToken;
