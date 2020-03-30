@@ -70,7 +70,7 @@
 
 	function ApiRead($detail){
 		$urlAPI="http://58.181.144.100:9081/api/";	
-	$url = $urlAPI."api/Message=$server";
+	$url = $urlAPI."api/Message";
 	$param ="Detail=$detail";
 	$agent = "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4) Gecko/20030624 Netscape/7.1 (ax)";
 
