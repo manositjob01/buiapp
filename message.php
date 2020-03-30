@@ -35,7 +35,7 @@
 
 	$LINEDatas['url'] = "https://api.line.me/v2/bot/message/reply";
   	$LINEDatas['token'] = "oPv+uZJTdZLoNa+edPtGTj0bjhaoA3/6KaHl3BZ4THohXrD8MMtnDLgVzb5SCopNp8PbNF9RlIAn664eMDnwvhafX3pwFjeks35MMRxw/9NErEY1UOyQ/Qhj1pRMV5GFbQq/3XtRfNk9T0oF2H3hPAdB04t89/1O/w1cDnyilFU=";
-	if($flage_status["doAPI"]){
+	if($flage_status["doAPI"]==true){
 		if($flage_status["status"]==true){
 			
 	$messages['messages'][0] = getFormatTextMessage("Register Complete @".$flage_status["message"]);
@@ -46,6 +46,10 @@
 	$encodeJson = json_encode($messages);	
 	$results = sentMessage($encodeJson,$LINEDatas);
 		}
+	}else{
+		$messages['messages'][0] = getFormatTextMessage("Cannot Call API Tranfer");
+	$encodeJson = json_encode($messages);	
+	$results = sentMessage($encodeJson,$LINEDatas);
 	}
 	/*Return HTTP Request 200*/
 	http_response_code(200);
