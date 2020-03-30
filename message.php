@@ -38,11 +38,11 @@
 	if($flage_status["doAPI"]==true){
 		if($flage_status["status"]==true){
 			
-	$messages['messages'][0] = getFormatTextMessage("Register Complete @".$flage_status["message"]);
+	$messages['messages'][0] = getFormatTextMessage("Register Complete");
 	$encodeJson = json_encode($messages);
   	$results = sentMessage($encodeJson,$LINEDatas);
 		}else{
-		$messages['messages'][0] = getFormatTextMessage("User ID Not Invalite @".$flage_status["message"]);
+		$messages['messages'][0] = getFormatTextMessage("User ID Not Invalite");
 	$encodeJson = json_encode($messages);	
 	$results = sentMessage($encodeJson,$LINEDatas);
 		}
