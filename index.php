@@ -4,7 +4,7 @@
    	$arrayHeader[] = "Content-Type: application/json";
    	$arrayHeader[] = "Authorization: Bearer {$accessToken}";
 
-	$arrayPostData['to'] = "abfdf604669f42e1b9f090061c1c174e";
+	$arrayPostData['to'] = "U907ac541a01abf11389dbcdc8366f153";
           $arrayPostData['messages'][0]['type'] = "text";
           $arrayPostData['messages'][0]['text'] ="aaaa";
 	 $result = pushMsg($arrayHeader,$arrayPostData);
