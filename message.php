@@ -52,6 +52,10 @@
 		$messages['messages'][0] = getFormatTextMessage("Cannot Call API Tranfer");
 	$encodeJson = json_encode($messages);	
 	$results = sentMessage($encodeJson,$LINEDatas);
+	}else{
+		$messages['messages'][0] = getFormatTextMessage($messageText);
+	$encodeJson = json_encode($messages);	
+		$results = sentMessage($encodeJson,$LINEDatas);
 	}
 	/*Return HTTP Request 200*/
 	http_response_code(200);
