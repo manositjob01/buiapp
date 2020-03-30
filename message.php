@@ -14,6 +14,7 @@
 	$pos = strpos($messageInput,":");
 	$flage_status["doAPI"] = false;	
 	$flage_status["status"] = false;
+	$flage_status["message"] ="";
 	if($pos!=false){
 
 	
@@ -21,9 +22,11 @@
 		if(strtoupper($sourceInput[0])=="REGISTER"){
 			$data = explode("@",$sourceInput[1]);
 			$flage_status["doAPI"] = true;
-		
-			if(SendAPI($data[1],$data[0],$replyToken)=="done"){
+			$cmd = SendAPI($data[1],$data[0],$replyToken);
+			$flage_status["message"] = $cmd;
+			if($cmd=="done"){
 				$flage_status["status"] = true;
+				
 			}
 		}
 
