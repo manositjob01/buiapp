@@ -1,7 +1,7 @@
 <?php
 	
 	$messages = [];
-	$messages['replyToken'] ="57aaf9f77b4a408f84d30d52d72da15f";
+	$messages['replyToken'] ="abfdf604669f42e1b9f090061c1c174e";
 	$messages['messages'][0] = "aaaa";
 	$encodeJson = json_encode($messages);
 
