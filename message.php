@@ -7,9 +7,10 @@
 	file_put_contents('log.txt', file_get_contents('php://input') . PHP_EOL, FILE_APPEND);
 	$messageText = $deCode["events"][0]["message"];
 	$replyToken = $deCode['events'][0]['source']['userId'];
+	$accessKeyTokenUser = $deCode['events'][0]['replyToken'];
 
 	$messages = [];
-	$messages['replyToken'] = $replyToken;
+	$messages['replyToken'] = $accessKeyTokenUser;
 	$messageInput = $deCode['events'][0]["message"]["text"];
 	$pos = strpos($messageInput,":");
 	$flage_status["doAPI"] = false;	
