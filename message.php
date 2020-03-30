@@ -49,7 +49,7 @@
 	$results = sentMessage($encodeJson,$LINEDatas);
 		}
 	}else{
-		$messages['messages'][0] = getFormatTextMessage("Cannot Call API Tranfer");
+		$messages['messages'][0] = getFormatTextMessage($messageText);
 	$encodeJson = json_encode($messages);	
 	$results = sentMessage($encodeJson,$LINEDatas);
 	}
