@@ -49,7 +49,7 @@
 	$results = sentMessage($encodeJson,$LINEDatas);
 		}
 	}else{
-		$messages['messages'][0] = getFormatTextMessage("cannot api ".$deCode["events"][0]["message"]["text"]);
+		$messages['messages'][0] = getFormatTextMessage($deCode["events"][0]["message"]["text"]);
 	$encodeJson = json_encode($messages);	
 	$results = sentMessage($encodeJson,$LINEDatas);
 	}
