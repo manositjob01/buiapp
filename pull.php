@@ -6,9 +6,9 @@
    	$arrayHeader[] = "Content-Type: application/json";
    	$arrayHeader[] = "Authorization: Bearer {$accessToken}";
 
-	$arrayPostData['to'] = $dataItem["userid"];
+	$arrayPostData['to'] = "U907ac541a01abf11389dbcdc8366f153";
           $arrayPostData['messages'][0]['type'] = "text";
-          $arrayPostData['messages'][0]['text'] = $dataItem["message"];
+          $arrayPostData['messages'][0]['text'] = "hello";
 	 $result = pushMsg($arrayHeader,$arrayPostData);
 
 	function pushMsg($arrayHeader,$arrayPostData){
