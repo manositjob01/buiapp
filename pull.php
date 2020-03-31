@@ -1,14 +1,14 @@
 <?php
 	if(isset($_POST["message"])){
-	$dataItem = json_decode($_POST["message"]);
+	
 	$arrayHeader = array();
 	$accessToken="oPv+uZJTdZLoNa+edPtGTj0bjhaoA3/6KaHl3BZ4THohXrD8MMtnDLgVzb5SCopNp8PbNF9RlIAn664eMDnwvhafX3pwFjeks35MMRxw/9NErEY1UOyQ/Qhj1pRMV5GFbQq/3XtRfNk9T0oF2H3hPAdB04t89/1O/w1cDnyilFU=";
    	$arrayHeader[] = "Content-Type: application/json";
    	$arrayHeader[] = "Authorization: Bearer {$accessToken}";
 
-	$arrayPostData['to'] = $dataItem["userid"];
+	$arrayPostData['to'] = $_POST["userid"];
           $arrayPostData['messages'][0]['type'] = "text";
-          $arrayPostData['messages'][0]['text'] = $dataItem["message"];
+          $arrayPostData['messages'][0]['text'] = $_POST["message"];
 	 $result = pushMsg($arrayHeader,$arrayPostData);
 
 	function pushMsg($arrayHeader,$arrayPostData){
@@ -26,5 +26,5 @@
 	return $result;
    }
 exit();
-	//}
+	}
 ?>
