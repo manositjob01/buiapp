@@ -40,7 +40,7 @@
 	if($flage_status["doAPI"]==true){
 		if($flage_status["status"]==true){
 			
-	$messages['messages'][0] = getFormatTextMessage("Register Complete");
+	$messages['messages'][0] = getFormatTextMessage("Register Complete กรุณาตรวจสอบอีเมล์เพื่อยืนยันการสมัครสมาชิก");
 	$encodeJson = json_encode($messages);
   	$results = sentMessage($encodeJson,$LINEDatas);
 		}else{
